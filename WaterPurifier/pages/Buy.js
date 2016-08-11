@@ -161,4 +161,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Buy1;
+export default Buy;
