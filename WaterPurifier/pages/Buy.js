@@ -47,7 +47,7 @@ const localData = [
     }
 ]
 
-class Buy1 extends React.Component{
+class Buy extends React.Component{
 
     constructor(props){
         super(props);
