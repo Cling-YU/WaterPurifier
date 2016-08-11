@@ -1,5 +1,5 @@
 /**
- * 像iOS注册
+ * 向iOS注册
  */
 import React from 'react';
 import { AppRegistry } from 'react-native';
