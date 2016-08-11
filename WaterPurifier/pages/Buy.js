@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 
 import Util from '../Common/Util';
+import AddView from './AddView';
 
 const localData = [
     {
@@ -47,7 +48,7 @@ const localData = [
     }
 ]
 
-class Buy11 extends React.Component{
+class Buy extends React.Component{
 
     constructor(props){
         super(props);
@@ -58,9 +59,6 @@ class Buy11 extends React.Component{
             filterNumber:5
         }
     }
-
-
-
 
     render(){
         return(
@@ -88,9 +86,9 @@ class Buy11 extends React.Component{
                         <Text style={styles.rowUnit}>/支</Text>
                     </View>
                 </View>
-                <View style={styles.addView}>
+                <AddView style={styles.addView}>
 
-                </View>
+                </AddView>
             </View>
         )
     }
@@ -157,7 +155,9 @@ const styles = StyleSheet.create({
     },
     addView:{
         flexDirection:'row',
-        justifyContent:'center'
+        justifyContent:'center',
+        marginRight:0,
+        width:100
     }
 })
 
