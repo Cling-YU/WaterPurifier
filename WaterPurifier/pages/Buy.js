@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
     },
     subTitleView:{
         flexDirection:'row',
+        alignItems:'flex-end'
     },
     rowImage:{
         width:60,
@@ -145,12 +146,14 @@ const styles = StyleSheet.create({
     rowMoneyText:{
         fontSize:24,
         color:'red',
-        marginBottom:10
+        textAlign:'center'
+        // marginBottom:10
     },
     rowUnit:{
         fontSize:15,
         color:'gray',
-        marginTop:8
+        textAlign:'center'
+        // marginTop:8
     },
     addView:{
         flexDirection:'row',
