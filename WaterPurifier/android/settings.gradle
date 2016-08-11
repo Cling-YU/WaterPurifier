@@ -1,0 +1,3 @@
+rootProject.name = 'WaterPurifier'
+
+include ':app'
