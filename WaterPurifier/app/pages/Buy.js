@@ -59,18 +59,15 @@ export default class Buy extends React.Component{
         var dataBlob ={'配送方式':[['邮寄到家','上门安装']],
             '订单明细':{'公司':'墨顿','运费':10,'上门服务费':10,'合计':143},
             '支付方式':[['支付宝支付','微信支付','货到付款']]};
-        let aaa = this.objToStrMap(dataBlob['订单明细']);
-        console.log('aaa'+JSON.stringify(aaa));
         let  i =0;
         BuyReducer.listViewData.map((dic)=>{
             if(dic.number !== 0){
                 i++;
                 let choose = {'名称':dic.title,'单价':dic.money,'个数':dic.number};
-                aaa.set(i,choose);
+                dataBlob.订单明细[i] = choose;
             }
         });
 
-        dataBlob.订单明细 = aaa;
         return(
             <View style={styles.bgView}>
                 <Image style = {styles.topImage} source={require('../../Source/top.png')} />
@@ -104,7 +101,7 @@ export default class Buy extends React.Component{
                     </View>
                     <TouchableOpacity style={styles.chooseAction}
                         onPress={()=>{
-                            console.log('选好了'+JSON.stringify(dataBlob)+JSON.stringify(aaa));
+                            console.log('选好了'+JSON.stringify(dataBlob));
                             dispatch(saveOrderInfoToStore2(dataBlob));
                             this.props.navigator.push({
                                 component:ConfirmOrder,
