@@ -63,7 +63,7 @@ class Buy extends React.Component{
     render(){
         return(
             <View style={styles.bgView}>
-                <Image style = {styles.topImage} source={require('../Source/top.png')} />
+                <Image style = {styles.topImage} source={require('../../Source/top.png')} />
                 <Text style={styles.filterText}>{'  '+'净水器适用滤芯  共'+this.state.filterNumber + '种'}</Text>
                 <ListView
                     style={styles.listView}
@@ -71,6 +71,14 @@ class Buy extends React.Component{
                     renderRow={this._renderRow.bind(this)}
                     bounces={false}
                 />
+
+                <View></View>
+                <View style={styles.bottomView}>
+                    <View style={styles.cartView}>
+                        <Image style={styles.cartImage} source={require('../../Source/filter.png')}></Image>
+                    </View>
+                </View>
+
             </View>
         )
     }
@@ -78,7 +86,7 @@ class Buy extends React.Component{
     _renderRow(data){
         return(
             <View style={styles.row}>
-                <Image style={styles.rowImage} source={require('../Source/filter.png')} />
+                <Image style={styles.rowImage} source={require('../../Source/filter.png')} />
                 <View style={styles.titleView}>
                     <Text style={styles.rowTitle}>{data.title}</Text>
                     <View style={styles.subTitleView}>
@@ -86,7 +94,7 @@ class Buy extends React.Component{
                         <Text style={styles.rowUnit}>/支</Text>
                     </View>
                 </View>
-                <AddView style={styles.addView}>
+                <AddView style={styles.addView} number={data.number}>
 
                 </AddView>
             </View>
@@ -98,7 +106,6 @@ const styles = StyleSheet.create({
     bgView:{
         backgroundColor:'white',
         marginTop:44,
-        height:Util.window.height - 64
     },
     topImage:{
         height:200,
@@ -112,7 +119,7 @@ const styles = StyleSheet.create({
     },
     listView:{
         flex:1,
-        marginBottom:50,
+        height:Util.window.height - 64 - 200 - 20 - 50
     },
     row:{
         flexDirection:'row',
@@ -122,8 +129,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 0.5,
     },
     titleView:{
-        marginLeft:15,
-        marginRight:100
+        marginLeft:10,
+        width:195
     },
     subTitleView:{
         flexDirection:'row',
@@ -145,19 +152,28 @@ const styles = StyleSheet.create({
         fontSize:24,
         color:'red',
         textAlign:'center'
-        // marginBottom:10
     },
     rowUnit:{
         fontSize:15,
         color:'gray',
         textAlign:'center'
-        // marginTop:8
     },
     addView:{
         flexDirection:'row',
-        justifyContent:'center',
-        marginRight:0,
         width:100
+    },
+    bottomView:{
+        flexDirection:'row',
+        height:50
+    },
+    cartView:{
+        width:80,
+    },
+    cartImage:{
+        width:30,
+        height:30,
+        marginTop:10,
+        marginLeft:20
     }
 })
 

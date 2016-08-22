@@ -3,6 +3,6 @@
  */
 import React from 'react';
 import { AppRegistry } from 'react-native';
-import Root from './pages/root';
+import Root from './app/pages/root';
 
 AppRegistry.registerComponent('WaterPurifier', () => Root);
