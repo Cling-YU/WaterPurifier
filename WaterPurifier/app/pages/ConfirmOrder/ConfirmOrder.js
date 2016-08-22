@@ -20,7 +20,7 @@ import {
     getUserName,
     getPhone,
     getAddr
-} from '../../app/actions/userAction';
+} from '../../actions/userAction';
 import UserInfo from './userInfo';
 import NavigatorBarByMyself from './NavigatorBar'
 import OrderInfoContainer from '../../containers/OrderInfoContainer'

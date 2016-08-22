@@ -40,19 +40,19 @@ export default class userInfo extends React.Component {
             >
                 <View style={styles.compareCell}>
                     <View style={styles.upContainer}>
-                        <Image style={styles.userNameImg} resizeMode='cover' source = {require('../../Source/A1_login_phone.png')}/>
+                        <Image style={styles.userNameImg} resizeMode='cover' source = {require('../../../Source/image/A01_login_phone@2x.png')}/>
                         <Text style={styles.userName}>{this.props.userName}</Text>
-                        <Image style={styles.phoneImg} source = {require('../../Source/A1_login_phone.png')}/>
+                        <Image style={styles.phoneImg} source = {require('../../../Source/image/A01_login_phone@2x.png')}/>
                         <Text style={styles.userName}>{this.props.phone}</Text>
                     </View>
                     <View style={styles.downContainer}>
-                        <Image style={styles.addressImg} source = {require('../../Source/A1_login_phone.png')}/>
+                        <Image style={styles.addressImg} source = {require('../../../Source/image/A01_login_phone@2x.png')}/>
                         <View style={styles.addressContainer}>
                             <Text numberOfLines={2} style= {styles.address}>{this.props.address}</Text>
                         </View>
                     </View>
                 </View>
-                <Image style={styles.rightArrow} source={require('../../Source/C3_delete.png')}/>
+                <Image style={styles.rightArrow} source={require('../../../Source/image/A01_login_phone@2x.png')}/>
             </TouchableOpacity>
         )
     }

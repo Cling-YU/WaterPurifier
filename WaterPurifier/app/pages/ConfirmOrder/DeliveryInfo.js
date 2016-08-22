@@ -21,7 +21,7 @@ import {
     getUserName,
     getPhone,
     getAddr
-} from '../../app/actions/userAction';
+} from '../../actions/userAction';
 import NavigatorBarByMyself from './NavigatorBar'
 var IS = [
     'http://down1.sucaitianxia.com/ai/26/ai5854.jpg',

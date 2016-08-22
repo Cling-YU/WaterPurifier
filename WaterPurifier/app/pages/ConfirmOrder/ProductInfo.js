@@ -15,14 +15,11 @@ import {
     PixelRatio,
 } from 'react-native';
 import WindowScale from '../../Common/Util';
-import{
-    addOrderInfo,
-    minusOrderInfo,
-} from '../../app/actions/OrderInfoAction';
+
 import{
     addOrderInfo2,
     minusOrderInfo2,
-} from '../../app/actions/OrderInfoAction2';
+} from '../../actions/OrderInfoAction2';
 export default class ProductComponent extends Component {
     constructor(props) {
         super(props);
@@ -42,7 +39,7 @@ export default class ProductComponent extends Component {
         var product = OrderInfo.productsList2[this.props.secoinID][this.props.index];
          return(
              <View style= {styles.ViewContainer}>
-                 <Image style = {styles.LeftImg} source={require('../../Source/C3_delete.png')}/>
+                 <Image style = {styles.LeftImg} source={require('../../../Source/image/A01_login_phone@2x.png')}/>
                  <View style ={styles.SubContainer}>
                      <View style={styles.ProductNameContainer}>
                          <Text style = {styles.ProductName}>
@@ -63,7 +60,7 @@ export default class ProductComponent extends Component {
                      }
                      }
                  >
-                     <Image style = {styles.LeftMinusBtn} source={require('../../Source/C3_delete.png')}/>
+                     <Image style = {styles.LeftMinusBtn} source={require('../../../Source/image/A01_login_phone@2x.png')}/>
                  </TouchableOpacity>
                  <View style = {styles.LeftRightMinusBtn}>
                      <Text style={{textAlign:'center'}}>{product['个数']}</Text>
@@ -75,7 +72,7 @@ export default class ProductComponent extends Component {
                          dispatch(addOrderInfo2(OrderInfo.productsList2,this.props.secoinID,this.props.index));
                      }}
                  >
-                 <Image source={require('../../Source/C3_delete.png')}/>
+                 <Image source={require('../../../Source/image/A01_login_phone@2x.png')}/>
                  </TouchableOpacity>
              </View>
          );

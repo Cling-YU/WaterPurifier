@@ -10,28 +10,30 @@ import {
 import StatusBarIOS from './StatusBarIOS';
 import Util from '../Common/Util';
 import Home from './Home';
+import {Provider} from 'react-redux';
+import store from '../store/store';
 
 class Root extends React.Component{
     render(){
         return(
-            <View style={{backgroundColor:'white',height:Util.window.height}}>
-                <Navigator
-                    initialRoute={{name:'Home',component:Home,title:'首页'}}
-                    configureScene={()=>{
-                        return Navigator.SceneConfigs.PushFromRight;
-                    }}
-                    renderScene={(route,navigator)=>{
-                        let Component = route.component;
-                        return (
-                            <Component navigator = {navigator} route = {route} {...route.passProps}/>
-                        )
-                    }}
-                    navigationBar={<Navigator.NavigationBar
-                        style={{backgroundColor:'gray'}}
-                        routeMapper={NavigationBarRouteMapper}
-                    />}
-                />
-            </View>
+            <Provider  store={store}>
+                <View style={{backgroundColor:'white',height:Util.window.height}}>
+                    <Navigator
+                        initialRoute={{name:'Home',component:Home,title:'首页'}}
+                        configureScene={()=>{
+                            return Navigator.SceneConfigs.PushFromRight;
+                        }}
+                        renderScene={(route,navigator)=>{
+                            let Component = route.component;
+                            return (
+                                <Component navigator = {navigator} route = {route} {...route.passProps}/>
+                            )
+                        }}
+
+                    />
+                </View>
+            </Provider>
+
         )
     }
 }

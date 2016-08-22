@@ -15,6 +15,8 @@ import ConfirmOrder from '../pages/ConfirmOrder/ConfirmOrder'
 class ConfirmOrderContainer extends React.Component {
     render() {
         console.log(ConfirmOrderContainer);
+        this.props.navigator.navigationBarHidden = true;
+
         return (
 
         <View style={{backgroundColor:'white'}}>

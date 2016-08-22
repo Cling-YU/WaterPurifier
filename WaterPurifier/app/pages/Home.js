@@ -5,8 +5,7 @@ import {
     TouchableOpacity,
     StyleSheet
 } from 'react-native';
-import Buy from './Buy';
-import {onPress1} from './Buy';
+import BuyContainer from '../containers/BuyContainer';
 class Home extends React.Component{
 
     render(){
@@ -18,8 +17,8 @@ class Home extends React.Component{
                     onPress={()=>{
                         console.log('跳转');
                         this.props.navigator.push({
-                            name:'Buy',
-                            component:Buy,
+                            name:'BuyContainer',
+                            component:BuyContainer,
                             title:'购买滤芯',
                         })
                     }}

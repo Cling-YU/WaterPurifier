@@ -20,14 +20,11 @@ import {
 import WindowScale from '../../Common/Util';
 import ProductComponentContainer from '../../containers/ProductInfoContainer'
 import ProductComponent from './ProductInfo'
-import {
-    saveOrderInfoToStore,
 
-} from '../../app/actions/OrderInfoAction'
 import {
     saveOrderInfoToStore2,
 
-} from '../../app/actions/OrderInfoAction2'
+} from '../../actions/OrderInfoAction2'
 
 export default class OrderInfoPage extends Component {
     constructor(props) {
@@ -43,11 +40,7 @@ export default class OrderInfoPage extends Component {
         };
     }
     componentWillMount() {
-        var dataBlob ={'配送方式':[['邮寄到家','上门安装']],
-            '订单明细':{'公司':'墨顿','1':{'名称':'产品1','单价':123,'个数':1},'运费':10,'上门服务费':10,'合计':143},
-            '支付方式':[['支付宝支付','微信支付','货到付款']]};
-        const {dispatch} = this.props;
-        dispatch(saveOrderInfoToStore2(dataBlob));
+
     }
     componentDidMount() {
         this.fetchData();
@@ -191,7 +184,7 @@ class DeliveryMethod extends Component {
                         this.setState({btn2Disabled:!this.state.btn2Disabled});
                     }}
                     >
-                        <Image style={styles.DeliveryMethodBtnImg} source={require('../../Source/A1_login_phone.png')}/>
+                        <Image style={styles.DeliveryMethodBtnImg} source={require('../../../Source/image/A01_login_phone@2x.png')}/>
                         <Text style ={this.state.btn1Disabled ?
                                   styles.DeliveryMethodBtnTextDisalbe:
                                   styles.DeliveryMethodBtnTextEnalbe
@@ -210,7 +203,7 @@ class DeliveryMethod extends Component {
                         this.setState({btn2Disabled:!this.state.btn2Disabled});
                     }}
                     >
-                        <Image style={styles.DeliveryMethodBtnImg} source={require('../../Source/A1_login_phone.png')}/>
+                        <Image style={styles.DeliveryMethodBtnImg} source={require('../../../Source/image/A01_login_phone@2x.png')}/>
                         <Text style = {this.state.btn2Disabled ?
                                   styles.DeliveryMethodBtnTextDisalbe:
                                   styles.DeliveryMethodBtnTextEnalbe
@@ -239,7 +232,7 @@ class DeliveryMethod extends Component {
                         this.setState({btn3Disabled:false});
                     }}
                     >
-                        <Image style={styles.DeliveryMethodBtnImg} source={require('../../Source/A1_login_phone.png')}/>
+                        <Image style={styles.DeliveryMethodBtnImg} source={require('../../../Source/image/A01_login_phone@2x.png')}/>
                         <Text style ={this.state.btn1Disabled ?
                                   styles.DeliveryMethodBtnTextDisalbe:
                                   styles.DeliveryMethodBtnTextEnalbe
@@ -259,7 +252,7 @@ class DeliveryMethod extends Component {
                         this.setState({btn3Disabled:false});
                     }}
                     >
-                        <Image style={styles.DeliveryMethodBtnImg} source={require('../../Source/A1_login_phone.png')}/>
+                        <Image style={styles.DeliveryMethodBtnImg} source={require('../../../Source/image/A01_login_phone@2x.png')}/>
                         <Text style = {this.state.btn2Disabled ?
                                   styles.DeliveryMethodBtnTextDisalbe:
                                   styles.DeliveryMethodBtnTextEnalbe
@@ -280,7 +273,7 @@ class DeliveryMethod extends Component {
                         this.setState({btn3Disabled:true});
                     }}
                     >
-                        <Image style={styles.DeliveryMethodBtnImg} source={require('../../Source/A1_login_phone.png')}/>
+                        <Image style={styles.DeliveryMethodBtnImg} source={require('../../../Source/image/A01_login_phone@2x.png')}/>
                         <Text style = {this.state.btn3Disabled ?
                               styles.DeliveryMethodBtnTextDisalbe:
                               styles.DeliveryMethodBtnTextEnalbe

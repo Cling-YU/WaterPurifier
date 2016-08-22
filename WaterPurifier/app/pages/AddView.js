@@ -7,36 +7,37 @@ import {
     TouchableOpacity
 } from 'react-native';
 
+import {addFilter,deleteFilter} from '../actions/buyAction';
 class AddView extends React.Component{
 
     constructor(props){
         super(props);
         this.state={
-            chooseNumber:this.props.number
+            rowID:this.props.row
         }
     }
 
     render(){
-        let num = this.state.chooseNumber;
+        const {BuyReducer} = this.props;
+        let Data = BuyReducer.listViewData;
+        let dic = Data[this.state.rowID];
+        let num = dic.number;
+        console.log('num'+num);
         return(
-            this.state.chooseNumber > 0 ?
-                this._choosed():
-                this._defult()
+            num > 0 ?
+                this._choosed(num,this.state.rowID,Data):
+                this._defult(this.state.rowID,Data)
         )
     }
 
-    _defult(){
+    _defult(row,data){
+        const {dispatch} = this.props;
         return(
             <View style={styles.bgView}>
                 <TouchableOpacity
                     style={styles.rightAction_defult}
                     onPress={()=>{
-                        console.log('+++'+this.state.chooseNumber+this.props.number);
-                        this.state.chooseNumber++
-                        this.setState({
-                            chooseNumber:this.state.chooseNumber
-                        })
-
+                        dispatch(addFilter(row,data))
                     }}
                 >
                     <Image style={styles.rightImage_defult} source={require('../../Source/filter.png')}></Image>
@@ -46,32 +47,25 @@ class AddView extends React.Component{
         )
     }
 
-    _choosed(){
+    _choosed(num,row,data){
+        const {dispatch} = this.props;
         return(
             <View style={styles.bgView}>
                 <TouchableOpacity
                     style={styles.leftAction}
                     onPress={()=>{
-                        this.state.chooseNumber--;
-                        console.log('-'+'   '+this.state.chooseNumber);
-                        this.setState(
-                            {chooseNumber:this.state.chooseNumber}
-                        )
+                        dispatch(deleteFilter(row,data))
                     }}
                 >
                     <Image style={styles.leftImage_choose} source={require('../../Source/filter.png')}></Image>
                 </TouchableOpacity>
 
-                <Text style={styles.textView}>{this.state.chooseNumber}</Text>
+                <Text style={styles.textView}>{num}</Text>
 
                 <TouchableOpacity
                     style={styles.rightAction_choose}
                     onPress={()=>{
-                        this.state.chooseNumber++;
-                        console.log('+'+'   '+this.state.chooseNumber+this.props.number);
-                        this.setState(
-                            {chooseNumber:this.state.chooseNumber}
-                        )
+                        dispatch(addFilter(row,data))
                     }}
                 >
                     <Image style={styles.rightImage_choose} source={require('../../Source/top.png')}></Image>
